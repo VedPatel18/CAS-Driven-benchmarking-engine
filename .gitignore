@@ -1,0 +1,43 @@
+# ---------------------------------------------------
+# 1. Security & Environment Variables (CRITICAL)
+# ---------------------------------------------------
+.env
+.env.*
+secrets.json
+
+# ---------------------------------------------------
+# 2. Raw Financial Data & Output Files
+# ---------------------------------------------------
+*.pdf
+*.csv
+*.xlsx
+*.xls
+*.json
+# Ignore any specific folders you use for data
+/data/
+/raw_cas_files/
+/exports/
+
+# ---------------------------------------------------
+# 3. Power BI Files (Protects embedded data)
+# ---------------------------------------------------
+*.pbix
+*.pbit
+
+# ---------------------------------------------------
+# 4. Python Environment & Cache
+# ---------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+# ---------------------------------------------------
+# 5. OS & Editor generated files
+# ---------------------------------------------------
+.DS_Store
+.vscode/
+.idea/
+*.swp
