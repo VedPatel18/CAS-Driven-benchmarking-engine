@@ -40,12 +40,15 @@ if uploaded_file and password:
                 st.toast("Raw data synced! Triggering metric calculations...", icon="⏳")
 
                 # Step C: The Orchestrator (Runs your background Python scripts)
-                # 1. Market Data first
-                subprocess.run([sys.executable, "benchmark_etl_pipeline.py"], check=True)
-                # 2. Master Portfolio Math second
-                subprocess.run([sys.executable, "master_etl_pipeline.py"], check=True)
-                # 3. Historical NAV backfill
+                # 1. Historical NAV backfill (MUST go first to fetch history for any new funds parsed in Step A)
                 subprocess.run([sys.executable, "one_time_backfill.py"], check=True)
+                
+                # 2. Market Data second (Locks in benchmark history)
+                subprocess.run([sys.executable, "benchmark_etl_pipeline.py"], check=True)
+                
+                # 3. Master Portfolio Math LAST (Now it has all raw data, NAVs, and Benchmarks ready to calculate)
+                subprocess.run([sys.executable, "master_etl_pipeline.py"], check=True)
+                
                 # Step D: Success UI
                 st.success("✅ System Fully Updated! Document parsed, synced, and all Alpha metrics calculated.")
                 
@@ -65,8 +68,3 @@ if uploaded_file and password:
                 st.error(f"ETL Pipeline Failed! The background math script crashed. Error: {e}")
             except Exception as e:
                 st.error(f"Error processing document.\nDetails: {e}")
-
-
-
-
-
