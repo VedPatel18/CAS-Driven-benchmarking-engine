@@ -90,20 +90,11 @@ Full DDL: [`database_schema.sql`](./database_schema.sql).
 ```
 ![Dashboard Overview](assets/dashboard-overview.png)
 ```
-*(Add your screenshot to an `assets/` folder in the repo and update the path above — GitHub will render it automatically.)*
 
 **Walkthrough recording**
 
-To add a demo video: drag an `.mp4` or `.mov` file directly into a GitHub Issue or Pull Request comment box (even a draft one) — GitHub will host it and give you a URL. Then embed it here:
-
 ```html
-<video src="PASTE_GITHUB_HOSTED_VIDEO_URL_HERE" controls width="700"></video>
-```
-
-Alternatively, link an unlisted screen recording (Loom, YouTube unlisted, etc.):
-
-```
-[Watch the full walkthrough](PASTE_LINK_HERE)
+<video src="https://github.com/user-attachments/assets/d1f156d1-6a2f-49f0-b746-bb714a75ea53" controls width="700"></video>
 ```
 
 ## Privacy & Security
