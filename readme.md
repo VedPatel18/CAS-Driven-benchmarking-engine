@@ -81,7 +81,7 @@ The pipeline stages run in a strict dependency order (enforced by `app.py`'s orc
 
 Full DDL: [`database_schema.sql`](./database_schema.sql).
 
-##Screenshots & Demo
+## Screenshots & Demo
 
 > This project is intentionally **not publicly hosted** — see [Privacy & Security](#privacy--security) for why. The screenshot and recording below are provided so the project can be evaluated without exposing real personal financial data.
 
